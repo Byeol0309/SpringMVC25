@@ -46,7 +46,7 @@
 			<version>${org.aspectj-version}</version>
 		</dependency>
 
-		<!-- Logging  보안 이슈로 버전향상
+		<!-- Logging  보안 이슈로 버전 향상 해야 됨
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -64,7 +64,7 @@
 			<version>${org.slf4j-version}</version>
 			<scope>runtime</scope>
 		</dependency>-->
-		<!-- 보안 이슈로 버전 향상 해야 됨
+		<!--
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -88,7 +88,8 @@
 				</exclusion>
 			</exclusions>
 			<scope>runtime</scope>
-		</dependency>		
+		</dependency>
+		
 		-->
 		<dependency>
 			<!-- 보안 이슈로 log4j2로 향상 -->
@@ -113,17 +114,23 @@
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
-
 		<!-- Servlet -->
+		<!-- 
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 			<scope>provided</scope>
+		</dependency> 서블릿 버전 향상 -->
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency><!--p111 서블릿 버전 향상 프론트+컨트롤러 -->
+    		<groupId>javax.servlet</groupId>
+    		<artifactId>javax.servlet-api</artifactId>
+    		<version>3.1.0</version>
+    		<scope>provided</scope>
 		</dependency>
-		
 		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
+			<groupId>javax.servlet.jsp</groupId> <!--지우면 xml로 돈다-->
 			<artifactId>jsp-api</artifactId>
 			<version>2.1</version>
 			<scope>provided</scope>
@@ -136,13 +143,13 @@
 
 		<!-- Test -->
 		<dependency>
-			<groupId>junit</groupId>
+			<groupId>junit</groupId><!--메서드단위로테스트-->
 			<artifactId>junit</artifactId>
 			<version>4.12</version> <!-- 4.7에서 4.12버전으로 향상-->
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok 롬북 추가 코드 -->
-		<dependency>
+		<dependency><!--DTO 객체 처리용 게터, 세터 toString, equals, 생성자 -->
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.38</version>
@@ -220,12 +227,21 @@
 		sql처리를 mapper에서 찾는다.  -> 인터페이스 + xml로 sql 처리함.
 				
 		-->
+		
 		<!-- 로그출력을 표형식으로 구현 https://mvnrepository.com/artifact/org.bgee.jdbc-log4j2/log4jdbc-log4j2-jdbc4.1 -->
 		<dependency>
 			<groupId>org.bgee.log4jdbc-log4j2</groupId>
 			<artifactId>log4jdbc-log4j2-jdbc4</artifactId>
 			<version>1.16</version>
 		</dependency>
+		
+		<!--프론트 결과를 json타입으로 보이게 설정  https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+   		 <groupId>com.fasterxml.jackson.core</groupId>
+    	 <artifactId>jackson-databind</artifactId>
+    	 <version>2.9.4</version>
+		</dependency>
+		
 	</dependencies> <!-- 의존성 주입 종료 -->
 	<build>
 		<plugins>
@@ -246,10 +262,10 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5.1</version>
+				<version>3.5.1</version><!--2.5.1에서 향상 -->
 				<configuration>
-					<source>11</source>
-					<target>11</target>
+					<source>11</source><!--1.6에서 향상 -->
+					<target>11</target><!--1.6에서 향상 -->
 					<compilerArgument>-Xlint:all</compilerArgument>
 					<showWarnings>true</showWarnings>
 					<showDeprecation>true</showDeprecation>
