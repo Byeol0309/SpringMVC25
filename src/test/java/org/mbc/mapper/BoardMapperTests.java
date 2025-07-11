@@ -57,7 +57,7 @@ public class BoardMapperTests {
 		mapper.insertSelectKey(board);
 		log.info(board);
 		log.info("내가 만든 게시물의 번호는 : " + board.getBno());
-	}
+	}    
 	
 	@Test
 	public void testRead() {
