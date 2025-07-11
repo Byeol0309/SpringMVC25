@@ -23,7 +23,7 @@
 
        <!--  <form role="form" action="/board/register" method="post"> -->
        
-         <div class="form-group">
+	      <div class="form-group">
             <label>Bno</label> <input class="form-control" name='bno'
             value='<c:out value="${board.bno}"/>' readonly="readonly">
           </div>

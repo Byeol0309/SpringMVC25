@@ -1,11 +1,11 @@
- 	</div>
-        <!-- /#page-wrapper -->
+		    </div>
+		        <!-- /#page-wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
+	    </div>
+	    <!-- /#wrapper -->
 
-   <!-- jQuery 상단 부분에 재정의함
-    <script src="/resources/vendor/jquery/jquery.min.js"></script> -->
+    <!-- jQuery 상단 부분에 재정의 함.-->
+   <!--  <script src="/resources/vendor/jquery/jquery.min.js"></script> -->
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -27,8 +27,8 @@
         $('#dataTables-example').DataTable({
             responsive: true
         });
-        $(".sidebar-nav") /* 모바일 화면에서 새로고침시 메뉴 펼쳐짐 버그 수정용 */
-        .attr("class","siderbar-nav navbar-collapse collapse")
+        $(".sidebar-nav") /* 모바일화면에서 새로고침시 메뉴펼쳐짐 버그 수정용 */
+        .attr("class","sidebar-nav navbar-collapse collapse")
         .attr("aria-expanded",'false')
         .attr("style","height:1px");
     });

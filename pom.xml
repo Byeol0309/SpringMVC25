@@ -32,6 +32,7 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+		
 		<dependency>
 			<!-- 위에 있는 webmvc를 복사해서 test로 변경 -->
 			<groupId>org.springframework</groupId>
@@ -46,7 +47,7 @@
 			<version>${org.aspectj-version}</version>
 		</dependency>	
 		
-		<!-- Logging 보안 이슈로 버전 향상 해야 됨 
+		<!-- Logging 
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -88,6 +89,7 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency> -->
+		
 		<dependency>
 			<!-- 보안 이슈로 log4j2로 향상 -->
 			<groupId>org.apache.logging.log4j</groupId>
@@ -104,7 +106,8 @@
 			<artifactId>log4j-slf4j-impl</artifactId>
 			<version>2.18.0</version>
 		</dependency> <!-- 보안 이슈로 log4j2로 향상 -->
-		
+
+
 		<!-- @Inject -->
 		<dependency>
 			<groupId>javax.inject</groupId>
@@ -118,7 +121,8 @@
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 			<scope>provided</scope>
-		</dependency>서블릿 버젼 향상-->
+		</dependency>-->
+		
 		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 		<dependency> <!-- p111 서블릿 버전향상 프론트+컨트롤러 -->
 			<groupId>javax.servlet</groupId>
@@ -126,6 +130,7 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
@@ -240,8 +245,8 @@
 		    <artifactId>jackson-databind</artifactId>
 		    <version>2.9.4</version>
 		</dependency>
-	</dependencies> <!-- 의존성 주입 종료 -->
 		        
+	</dependencies>
     <build>
         <plugins>
             <plugin>

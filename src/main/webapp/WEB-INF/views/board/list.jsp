@@ -17,7 +17,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                            MBCBoard List Page
-                           <button id='regBtn' type="button" class="btn btn-xs pull-right">게시글 등록</button>
+                        <button id='regBtn' type="button" class="btn  btn-xs pull-right">게시글등록</button>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -38,18 +38,17 @@
                                 <!-- 컨트롤러에서 전달된 리스트+제네릭 처리용 -->
                                 <!-- 서비스에서 만들어져 나옴 List<BoardVO>  -->
                                 <!-- 컨트롤러에서 model.addAttribute("list", service.getList()); -->
-                                   <tr>
-                                      <td><c:out value="${board.bno}" /></td>
-                                      <td>
-                                      <a href='/board/get?bno=<c:out value="${board.bno}"/>'>
-                                      <c:out value="${board.title}" /></td>
-                                      </a>
-                                      
-                                      
-                                      <td><c:out value="${board.writer}" /></td>
-                                      <td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.regDate}" /></td>
-                                      <td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.updateDate}" /></td>
-                                   </tr>
+                                	<tr>
+                                		<td><c:out value="${board.bno}" /></td>
+	                                	<td>
+		                                	<a href='/board/get?bno=<c:out value="${board.bno}"/>'>
+			                                	<c:out value="${board.title}" />
+		                                	</a>
+	                                	</td>
+	                                	<td><c:out value="${board.writer}" /></td>
+	                                	<td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.regDate}" /></td>
+	                                	<td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.updateDate}" /></td>
+                                	</tr>
                                 
                                 </c:forEach>
                                 
@@ -93,40 +92,39 @@
     <script type="text/javascript"> /* CURD 처리결과 메세지를 출력하는 코드 */
     
     $(document).ready(
-       function(){
-          var result = '<c:out value="${result}"/>';
-   
-          checkModal(result);      
-          
-          function checkModal(result){
-                      
-             if(result === ''){
-                return;
-                // 입력값이 없으면 돌아감
-             }   
-          
-             if(parseInt(result)>0){
-                // 게시물 등록번호가 넘어오면!!!
-                $(".modal-body").html("게시글 " + parseInt(result) + "번이 등록 되었습니다.");
-             }
-             
-             $("#myModal").modal("show"); // 모달창을 화면에 띄어라!!!
-          } // 모달처리 종료
-          
-          $("#regBtn").on("click", function(){
-             // regBtn id를 갖는 버튼을 클릭하면 익명의 함수를 실행한다.
-             self.location = "/board/register";
-             // 위치를 이동해라 http://192.168.111.104:80/board/register로 이동한다.
-             
-          });
-          
-       
-       }   /* 백엔드에서 처리 결과를 받는 변수를 연동 */
-          /* 등록시 : rttr.addFlashAttribute("result",board.getBno());   */
-          /* 수정시 : rttr.addFlashAttribute("result","success"); */
-          /* 삭제시 : rttr.addFlashAttribute("result","success"); */
+    	function(){
+    		var result = '<c:out value="${result}"/>';
+	
+    		checkModal(result);		
+    		
+    		function checkModal(result){
+    						
+	    		if(result === ''){
+	    			return;
+	    			// 입력값이 없으면 돌아감
+	    		}	
+    		
+	    		if(parseInt(result)>0){
+	    			// 게시물 등록번호가 넘어오면!!!
+	    			$(".modal-body").html("게시글 " + parseInt(result) + "번이 등록 되었습니다.");
+	    		}
+	    		
+	    		$("#myModal").modal("show"); // 모달창을 화면에 띄어라!!!
+    		} // 모달 처리 종료
+    		 
+    		$("#regBtn").on("click", function(){
+    			// regBtn id를 갖는 버튼을 클릭하면 익명의 함수를 실행한다.
+    			self.location = "/board/register";
+    			// 위치를 이동해라 http://192.168.111.104:80/board/register 로 이동한다.
+    		});
+    		
+    	
+    	}	/* 백엔드에서 처리 결과를 받는 변수를 연동 */
+	    	/* 등록시 : rttr.addFlashAttribute("result",board.getBno());   */
+	    	/* 수정시 : rttr.addFlashAttribute("result","success"); */
+	    	/* 삭제시 : rttr.addFlashAttribute("result","success"); */
     );
     
 
-   </script>
+	</script>
     
